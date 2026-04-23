@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* Твои стили (полностью сохранены), только добавлены анимации и ховеры как в предыдущем улучшенном варианте */
+        /* Твои стили полностью сохранены, добавлены только анимации и ховеры как в предыдущем улучшенном варианте */
         :root {
             --bg-main: #050505;
             --bg-side: #080808;
@@ -31,7 +31,6 @@
             background-color: var(--bg-main); color: var(--text-p);
             overflow: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
         }
-        /* Скроллбар */
         main::-webkit-scrollbar { width: 6px; }
         main::-webkit-scrollbar-track { background: transparent; }
         main::-webkit-scrollbar-thumb { background: #222; border-radius: 10px; }
@@ -164,21 +163,12 @@
         .giveaway-card::before { content: 'GIVEAWAY'; position: absolute; top: 12px; right: -28px; background: var(--accent); font-size: 10px; font-weight: 900; padding: 5px 38px; transform: rotate(45deg); letter-spacing: 1px; z-index: 2; box-shadow: 0 0 12px rgba(0,0,0,0.4); transition: var(--ts); }
         .giveaway-card:hover { border-color: rgba(255,85,0,0.35); transform: translateY(-8px); box-shadow: 0 25px 40px rgba(0,0,0,0.5), 0 0 30px rgba(255,85,0,0.08); background: linear-gradient(160deg, #1c1c1c, #0f0f0f); }
         .giveaway-card:hover::before { background: #ff6a1a; box-shadow: 0 0 20px rgba(255,85,0,0.5); }
-        .item-preview { width: 150px; margin: 0 auto 22px; filter: drop-shadow(0 8px 18px rgba(255,85,0,0.25)); transition: var(--ts-smooth); display: block; }
+        .item-preview { width: 150px; margin: 0 auto 22px; filter: drop-shadow(0 8px 18px rgba(255,85,0,0.25)); transition: var(--ts-smooth); display: block; object-fit: contain; }
         .giveaway-card:hover .item-preview { transform: scale(1.06) translateY(-5px); filter: drop-shadow(0 15px 25px rgba(255,85,0,0.4)); }
         .giveaway-card h3 { margin: 0 0 12px; font-size: 18px; font-weight: 700; letter-spacing: -0.2px; }
         .timer { font-family: 'Inter', monospace; color: var(--accent); font-size: 22px; font-weight: 700; margin-bottom: 22px; display: block; letter-spacing: 1px; text-shadow: 0 0 12px var(--accent-glow); transition: var(--ts); }
         .giveaway-card:hover .timer { text-shadow: 0 0 20px rgba(255,85,0,0.5); }
         .giveaway-card .btn-join { width: 100%; padding: 13px; font-size: 14px; border-radius: 12px; }
-        .giveaway-card.secret { opacity: 0.8; border-style: dashed; border-color: rgba(255,255,255,0.1); background: linear-gradient(160deg, #111, #080808); }
-        .giveaway-card.secret:hover { opacity: 1; border-color: rgba(255,255,255,0.25); border-style: solid; }
-        .giveaway-card.secret::before { content: 'СКОРО'; background: #333; right: -20px; }
-        .secret-icon { height: 150px; display: flex; align-items: center; justify-content: center; font-size: 48px; color: #2a2a2a; margin-bottom: 22px; transition: var(--ts-smooth); }
-        .secret-icon i { transition: var(--ts-smooth); }
-        .giveaway-card.secret:hover .secret-icon i { color: #555; transform: scale(1.1); text-shadow: 0 0 30px rgba(255,255,255,0.1); animation: softPulse 2s infinite; }
-        .giveaway-card.secret .timer { color: #555; text-shadow: none; }
-        .giveaway-card.secret .btn-join { border-color: #333; color: #555; }
-        .giveaway-card.secret:hover .btn-join { border-color: #555; color: #888; background: rgba(255,255,255,0.03); }
         .clan-banner {
             background: #111; border: 1px solid var(--border); border-radius: var(--radius-xl);
             padding: 32px 36px; display: flex; align-items: center; justify-content: space-between;
@@ -267,33 +257,16 @@
                 <!-- ДИНАМИЧЕСКАЯ ЛЕНТА НОВОСТЕЙ (YouTube) -->
                 <div class="section-title">Последние видео с наших каналов</div>
                 <div id="news-grid" class="news-grid">
-                    <!-- Здесь появится сетка после загрузки -->
+                    <!-- Загрузится скриптом -->
                 </div>
 
-                <!-- Розыгрыши (статическая часть) -->
+                <!-- Розыгрыши (динамическая секция) -->
                 <div class="section-header" style="margin-bottom: 28px;">
                     <div class="section-title" style="margin-bottom: 0;">Активные розыгрыши от ACEHUB</div>
-                    <a href="#" class="view-all">Смотреть все &nbsp;→</a>
+                    <a href="https://t.me/PeterGriffinNews" target="_blank" class="view-all">Смотреть все &nbsp;→</a>
                 </div>
-                <div class="giveaway-grid">
-                    <div class="giveaway-card">
-                        <img src="https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0jswnu_d_mXvOP8nIlmz5D95yR6-6cOLcyrS6O-i6pXfHhv7MAsBr_n0fV9m0v_3fzxW7N_ix9nbxfX3a-iEkzkC6pEij-qX99Sii1K3_RVrZ27xJY-XcwI9aV2F-ADvlevvhp61vJicm3Rr73Ul7XfcnR20hxtmN7Rshq_fRhueWfS5VInmU_W8/360fx360f" alt="Karambit" class="item-preview">
-                        <h3>Karambit | Lore (FT)</h3>
-                        <span class="timer">23:45:12</span>
-                        <button class="btn-join"><span>Участвовать через TG</span></button>
-                    </div>
-                    <div class="giveaway-card">
-                        <img src="https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0jswnu_d_mXvOP8nIlmz5D95yR6-6cOLcyrS6O-i6pXfHhv7MAsBr_n0fV9m0v_3fzxW7N_ix9nbxfX3_ZzFkzkC6pEijuvS8N2i0FKw_ktoYm7xJo-XJwM7NV6DqVXtle3vhp-0u53AnXFk6HIr7H_AnRG1hxtia7Rshq_fRhueWfS5XN7mKsc/360fx360f" alt="Arcana" class="item-preview">
-                        <h3>Fractal Horns (Arcana)</h3>
-                        <span class="timer">04:12:05</span>
-                        <button class="btn-join"><span>Участвовать через TG</span></button>
-                    </div>
-                    <div class="giveaway-card secret">
-                        <div class="secret-icon"><i class="fa-solid fa-question"></i></div>
-                        <h3>Секретный скин CS2</h3>
-                        <span class="timer">СКОРО</span>
-                        <button class="btn-join"><span>Ждать анонса</span></button>
-                    </div>
+                <div id="giveaway-grid" class="giveaway-grid">
+                    <!-- Загрузится скриптом -->
                 </div>
 
                 <!-- ACE Clan (статическая часть) -->
@@ -317,16 +290,15 @@
         </main>
     </div>
 
-    <!-- Скрипт для загрузки видео с YouTube через RSS -->
+    <!-- Скрипт YouTube -->
     <script>
-(async function() {
+    (async function() {
         const newsGrid = document.getElementById('news-grid');
         if (!newsGrid) return;
 
-        // ⚠️ Твои реальные ID каналов (замени на свои)
         const channelIds = [
-            'UCM5j9GKoJqyWxLXTGKHSFeA', // ← @KupIinPlay
-            'UChDoEDX9vL7f9Re4jwSU3zw'  // ← @GladoonHightabOnelove
+            'UCM5j9GKoJqyWxLXTGKHSFeA', // @KupIinPlay
+            'UChDoEDX9vL7f9Re4jwSU3zw'  // @GladoonHightabOnelove
         ];
 
         newsGrid.innerHTML = '<div style="color:#888; padding:40px; text-align:center;"><i class="fa-solid fa-spinner fa-spin"></i> Загрузка видео...</div>';
@@ -342,8 +314,6 @@
                 if (!res.ok) throw new Error(`HTTP ${res.status}`);
                 const data = await res.json();
                 if (data.status !== 'ok') throw new Error('RSS error');
-                
-                // Фильтруем Shorts по URL и заодно убираем возможные "битые" записи
                 return data.items
                     .filter(item => item.link && !item.link.includes('/shorts/'))
                     .map(item => ({
@@ -363,10 +333,9 @@
         let allVideos = allChannelsVideos.flat();
         allVideos.sort((a, b) => b.pubDate - a.pubDate);
 
-        // 🔹 Меняем количество: 1 главное + 3 боковых = всего 4 видео
         const recentVideos = allVideos.slice(0, 4);
         const mainVideo = recentVideos[0];
-        const sideVideos = recentVideos.slice(1, 4); // 3 штуки
+        const sideVideos = recentVideos.slice(1, 4);
 
         if (!mainVideo) {
             newsGrid.innerHTML = '<div style="color:#888; padding:40px; text-align:center;">Нет видео для отображения</div>';
@@ -402,6 +371,130 @@
                 ${sideHTML || '<div style="color:#666;">Остальные видео появятся позже</div>'}
             </div>
         `;
+    })();
+    </script>
+
+    <!-- Скрипт загрузки розыгрышей из Telegram -->
+    <script>
+    (async function() {
+        const giveawayGrid = document.getElementById('giveaway-grid');
+        if (!giveawayGrid) return;
+
+        const CACHE_KEY = 'giveaway_cache';
+        const CACHE_DURATION = 60 * 60 * 1000; // 1 час
+
+        // Проверяем кэш
+        const cached = localStorage.getItem(CACHE_KEY);
+        if (cached) {
+            try {
+                const { timestamp, data: cachedPosts } = JSON.parse(cached);
+                if (Date.now() - timestamp < CACHE_DURATION) {
+                    renderGiveaways(cachedPosts);
+                    return;
+                }
+            } catch (e) { /* игнорируем */ }
+        }
+
+        giveawayGrid.innerHTML = '<div style="color:#888; padding:40px; text-align:center;"><i class="fa-solid fa-spinner fa-spin"></i> Загрузка розыгрышей...</div>';
+
+        // RSS-лента канала через rsshub
+        const rssUrl = 'https://rsshub.app/telegram/channel/PeterGriffinNews';
+        const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+
+        try {
+            const res = await fetch(apiUrl);
+            if (!res.ok) throw new Error(`HTTP ${res.status}`);
+            const data = await res.json();
+            if (data.status !== 'ok') throw new Error('RSS error');
+
+            const allItems = data.items || [];
+            const giftItems = allItems.filter(item => {
+                const text = (item.title || '') + ' ' + (item.description || '');
+                return /#gift/i.test(text);
+            });
+
+            // Парсим каждый пост
+            const parsed = giftItems.map(item => {
+                // Очищаем HTML от описания
+                const desc = item.description || '';
+                const plainText = desc.replace(/<[^>]*>/g, '').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"');
+                const lines = plainText.split('\n').map(line => line.trim()).filter(line => line.length > 0);
+
+                const titleLine = lines[0] || 'Розыгрыш';
+                const prizeLine = lines[1] || 'Приз';
+
+                // Ищем картинку (enclosure или первый img)
+                let imageUrl = '';
+                if (item.enclosure && item.enclosure.type && item.enclosure.type.startsWith('image/')) {
+                    imageUrl = item.enclosure.link || '';
+                } else {
+                    const imgMatch = desc.match(/<img[^>]+src=["']([^"']+)["']/i);
+                    imageUrl = imgMatch ? imgMatch[1] : '';
+                }
+
+                return {
+                    title: titleLine,
+                    prize: prizeLine,
+                    image: imageUrl,
+                    link: item.link || 'https://t.me/PeterGriffinNews',
+                    pubDate: item.pubDate
+                };
+            });
+
+            // Если ничего не нашли, оставляем заглушку
+            if (parsed.length === 0) {
+                giveawayGrid.innerHTML = '<div style="color:#666; padding:30px; text-align:center; width:100%;">Скоро появится первый розыгрыш</div>';
+                return;
+            }
+
+            // Сохраняем в кэш
+            localStorage.setItem(CACHE_KEY, JSON.stringify({
+                timestamp: Date.now(),
+                data: parsed
+            }));
+
+            renderGiveaways(parsed);
+
+        } catch (err) {
+            console.error('Ошибка загрузки розыгрышей:', err);
+            // Пробуем показать кэш, если есть
+            const cached = localStorage.getItem(CACHE_KEY);
+            if (cached) {
+                try {
+                    const { data: cachedPosts } = JSON.parse(cached);
+                    renderGiveaways(cachedPosts);
+                    return;
+                } catch (e) {}
+            }
+            giveawayGrid.innerHTML = '<div style="color:#888; padding:30px; text-align:center;">Не удалось загрузить розыгрыши</div>';
+        }
+
+        function renderGiveaways(posts) {
+            const cardsHTML = posts.map(post => `
+                <div class="giveaway-card" onclick="window.open('${post.link}', '_blank')">
+                    ${post.image ? `<img src="${post.image}" alt="Приз" class="item-preview" onerror="this.style.display='none'">` : '<div class="secret-icon"><i class="fa-solid fa-gift"></i></div>'}
+                    <h3>${escapeHTML(post.title)}</h3>
+                    <p style="color: var(--text-s); margin: 0 0 15px; font-size: 14px;">${escapeHTML(post.prize)}</p>
+                    <span class="timer">Активен</span>
+                    <button class="btn-join"><span>Участвовать через TG</span></button>
+                </div>
+            `).join('');
+
+            giveawayGrid.innerHTML = cardsHTML;
+        }
+
+        function escapeHTML(str) {
+            return str.replace(/[&<>"']/g, function(match) {
+                switch (match) {
+                    case '&': return '&amp;';
+                    case '<': return '&lt;';
+                    case '>': return '&gt;';
+                    case '"': return '&quot;';
+                    case "'": return '&#39;';
+                    default: return match;
+                }
+            });
+        }
     })();
     </script>
 </body>
